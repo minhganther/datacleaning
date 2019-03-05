@@ -46,12 +46,14 @@ Xy_data <- merge(activity_labels, Xy_data, by="activity"); Xy_data$activity = NU
 
 # Create 2nd dataset grouped by subjectID and activity --------------------
 
-# # Create a tbl to use group_by function from dplyr
-# Xy_tbl <- as.tbl(Xy_data)
-
-# # Group by subjectID and activity
-# Xy_tbl_grouped <- group_by(Xy_tbl, subjectID, activity.name)
-
-# # Calculate mean groupwise, skip over group column
-# Xy_summary <- summarize_at(Xy_tbl_grouped, 4:82, mean)
-# ###### Xy_summary is the tidy dataset, grouped by subject and activity and summarized by mean
+ # Create a tbl to use group_by function from dplyr
+ Xy_tbl <- as.tbl(Xy_data)
+ # Group by subjectID and activity
+ Xy_tbl_grouped <- group_by(Xy_tbl, subjectID, activity.name)
+ # Calculate mean groupwise, skip over group column
+ 
+ Xy_summary <- summarize_at(Xy_tbl_grouped, 4:82, mean)
+ ###### Xy_summary is the tidy dataset, grouped by subject and activity and summarized by mean
+ 
+ write.table(Xy_summary, file = "rundata.txt", row.name=FALSE)
+ 
