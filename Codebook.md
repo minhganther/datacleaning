@@ -6,6 +6,7 @@ output: html_document
 ---
 
 ## Project Description
+
 This repository was created as an assignment to the Data Analysis Course "[Getting and Cleaning Data](https://www.coursera.org/learn/data-cleaning/home/welcome)"" by Coursera.
 The purpose of the project was to collect data, work and clean up the dataset so that it can later be used for analysis.
 The task was to create an R script that fulfills the following tasks:
@@ -17,17 +18,20 @@ The task was to create an R script that fulfills the following tasks:
 
 The project uses data from the dataset "Human Activity Recognition Using Smartphones Data Set" by the UCI which can be downloaded [here](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip).
 
-##Study design, collection of data and data processing
+## Study design, collection of data and data processing
+
 For more details on the study, please visit the original authors' repository page found [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 Briefly, the authors collected data of 30 study participants wearing fitness trackers while performing certain activities. The measurements were derived from the embedded accelerometer and gyroscope within the tracker devices and noise-filtered. 
 For extensive details on data processing, please look at the 'features_info.txt' file on the author's repository page.
 
-##Creating the tidy datafile
+## Creating the tidy datafile
 
-###Guide to create the tidy data file
+### Guide to create the tidy data file
+
 In order to clean the data, several steps were carried out. First, all necessary data was loaded into R. Then spelling errors were removed. A combined dataframe with headers was created, unneeded features were removed. *train* and *test* datasets were merged to one dataframe. Activity indices were replaced by their respective descriptive names. Data was grouped by activity and subject identifier and summarized by calculating group-wise mean. For sake of readibility, feature names were not significantly altered since I personally find the abbreviations easier to read.
 
-###Cleaning of the data
+### Cleaning of the data
+
 1. Download the data
 2. Read data into R (separate files consisting of subject names, activity names, feature names, measurement data)
 3. Clean feature names (remove spelling errors)
@@ -39,20 +43,24 @@ In order to clean the data, several steps were carried out. First, all necessary
 9. Summarize the data by applying the mean group-wise.
 10. Write the dataset into a rundata.txt file.
 
-##Description of the variables in the rundata.txt file
+## Description of the variables in the rundata.txt file
+
 The rundata.txt file represents the output of the run_analysis.R script. It shows the final tidy dataset, which shows the mean for each feature (columns) grouped by suject ID and activity. 
 
 * Dimensions: 180 observations x 81 variables
 
-###subjectID
+### subjectID
+
 This variable is a integer which denotes the identifier for a study participant (in total: 30)
 Short description of what the variable describes.
 
-###activity.name
+### activity.name
+
 The character string indicates one of six possible activities which were carried out during the measurement.
 The possible values are: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS.
 
-###Feature variables
+### Feature variables
+
 For more detail on how these features were obtained in the original study, please visit the original authors' webpage and refer to the 'features_info.txt' file.
 Briefly, a feature name is composed of several building blocks which describe the feature and how it was obtained. 
 
@@ -70,7 +78,8 @@ Mag	            | signal magnitude calculated using the Euclidean norm
 mean()          | Mean value
 std()           | Standard deviation value
 
-##Sources
+## Sources
+
 [A Codebook Template](https://gist.github.com/JorisSchut/dbc1fc0402f28cad9b41) from Joris Schut was used to create the codebook.
 
 [Human Activity Recognition Using Smartphones Data Set](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
