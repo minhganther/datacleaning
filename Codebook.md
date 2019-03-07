@@ -22,13 +22,13 @@ The project uses data from the dataset "Human Activity Recognition Using Smartph
 
 For more details on the study, please visit the original authors' repository page found [here](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
 Briefly, the authors collected data of 30 study participants wearing fitness trackers while performing certain activities. The measurements were derived from the embedded accelerometer and gyroscope within the tracker devices and noise-filtered. 
-For extensive details on data processing, please look at the 'features_info.txt' file on the author's repository page.
+For extensive details on data processing, please look at the `features_info.txt` file on the author's repository page.
 
 ## Creating the tidy datafile
 
 ### Guide to create the tidy data file
 
-In order to clean the data, several steps were carried out. First, all necessary data was loaded into R. Then spelling errors were removed. A combined dataframe with headers was created, unneeded features were removed. *train* and *test* datasets were merged to one dataframe. Activity indices were replaced by their respective descriptive names. Data was grouped by activity and subject identifier and summarized by calculating group-wise mean. For sake of readibility, feature names were not significantly altered since I personally find the abbreviations easier to read.
+In order to clean the data, several steps were carried out. First, all necessary data was loaded into R. Then spelling errors were removed. A combined dataframe with headers was created, unneeded features were removed. `train` and `test` datasets were merged to one dataframe. Activity indices were replaced by their respective descriptive names. Data was grouped by activity and subject identifier and summarized by calculating group-wise mean. For sake of readibility, feature names were not significantly altered since I personally find the abbreviations easier to read.
 
 ### Cleaning of the data
 
@@ -36,25 +36,25 @@ In order to clean the data, several steps were carried out. First, all necessary
 2. Read data into R (separate files consisting of subject names, activity names, feature names, measurement data)
 3. Clean feature names (remove spelling errors)
 4. Merge measurement data and feature names (indicating the column headers), at first separately for *train* and *test* datasets
-5. Remove unneeded columns by selecting only features containing *mean()* or *std()* values.
-6. Merge *train* and *test* dataset to one dataframe.
+5. Remove unneeded columns by selecting only features containing `mean()` or `std()` values.
+6. Merge `train` and `test` dataset to one dataframe.
 7. Replace numeric activity indicators by their real names by merging the dataframe with the activity name data.
-8. Create a tbl (dplyr package) and group by activity and subject ID
+8. Create a tbl (`dplyr` package) and group by activity and subject ID
 9. Summarize the data by applying the mean group-wise.
-10. Write the dataset into a rundata.txt file.
+10. Write the dataset into a `rundata.txt` file.
 
 ## Description of the variables in the rundata.txt file
 
-The rundata.txt file represents the output of the run_analysis.R script. It shows the final tidy dataset, which shows the mean for each feature (columns) grouped by suject ID and activity. 
+The `rundata.txt` file represents the output of the `run_analysis.R` script. It shows the final tidy dataset, which shows the mean for each feature (columns) grouped by `sujectID` and `activity.name`. 
 
 * Dimensions: 180 observations x 81 variables
 
-### subjectID
+### `subjectID`
 
 This variable is a integer which denotes the identifier for a study participant (in total: 30)
 Short description of what the variable describes.
 
-### activity.name
+### `activity.name`
 
 The character string indicates one of six possible activities which were carried out during the measurement.
 The possible values are: LAYING, SITTING, STANDING, WALKING, WALKING_DOWNSTAIRS, WALKING_UPSTAIRS.

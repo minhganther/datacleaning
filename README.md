@@ -3,7 +3,7 @@ This repository was created for the final assignment for the Coursera R course "
 
 In this assignment, the purpose was to "tidy" an existing dataset and create a new dataset by grouping variables and averaging within groups. This project provides a script for the tidying which outputs the clean dataset.
 
-The R script accomplishes the following things:
+The `run_analysis.R` script accomplishes the following things:
    1. Merges the training and the test sets to create one data set.
    2. Extracts only the measurements on the mean and standard deviation for each measurement.
    3. Uses descriptive activity names to name the activities in the data set
@@ -13,20 +13,21 @@ The R script accomplishes the following things:
 ## Files
 
 Included files in this project are:
-- README.md - Readme file with general information and purpose of the project
-- run_analysis.R - R script which was used to tidy the dataset and output a new tidy dataset
-- Codebook.md - Codebook providing information about the used variables and instruction on how the tidy dataset was produced.
+- `README.md` - Readme file with general information and purpose of the project
+- `run_analysis.R` - R script which was used to tidy the dataset and output a new tidy dataset
+- `Codebook.md` - Codebook providing information about the used variables and instruction on how the tidy dataset was produced.
+- `rundata.txt` - Final output file with tidied data.
 
 ## Tidying of the dataset
 
 The tidying was accomplished by the following steps:
-- merging 'train' and 'test' datasets
+- merging `train` and `test` datasets
 - assigning descriptive variable names 
 - assigning other descriptive variables relating to subject ID and activity
 - replacing activity indicators (num values) with their respective full labels
 - spelling errors from variable names were corrected (namely duplication errors like '...BodyBody...')
-- only features relating to mean - mean() or standard deviation - std() were kept.
+- only features relating to mean - `mean()` or standard deviation - `std()` were kept.
 
-Finally, a grouped dataset was created, displaying the mean values of all remaining features, grouped by subject ID and activity.
+Finally, a grouped dataset was created, displaying the mean values of all remaining features, grouped by subject ID and activity. Therefore, rows represent one subject performing a certain activity. 
 
-For details, refer to the Codebook.md section *Cleaning of the data*.
+For details, refer to the Codebook.md section `Cleaning of the data`.
